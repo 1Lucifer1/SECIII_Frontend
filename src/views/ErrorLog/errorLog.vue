@@ -22,7 +22,7 @@
     </el-table-column>
     <el-table-column
       prop="summary"
-      label="总结">
+      label="简述">
     </el-table-column>
     <el-table-column
       fixed="right"

@@ -37,7 +37,8 @@ import { mapGetters, mapMutations, mapActions } from 'vuex'
 export default {
   name: "similarRank",
   async mounted() {
-    await this.getSimilarityRank(1);
+    console.log(this.$route.query.id);
+    await this.getSimilarityRank(this.$route.query.id);
     console.log(this.$store.state.file.rank);
   },
   methods: {
