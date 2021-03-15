@@ -12,7 +12,7 @@ const file = {
   actions: {
     getFileMessage : async({ commit },id) => {
       const res = await getFileMessageAPI(id)
-      console.log(res);
+      console.log("out");
       if(res){
         commit('set_fileMessage', res)
       }

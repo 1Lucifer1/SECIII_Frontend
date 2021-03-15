@@ -5,7 +5,7 @@ import Vue from 'vue'
 import store from '../store'
 
 const requests = axios.create({
-  baseURL:'http://localhost:8080',
+  baseURL:'http://localhost:30001',
   timeout:6000
 })
 
