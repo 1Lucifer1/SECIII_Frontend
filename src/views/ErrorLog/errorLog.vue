@@ -1,16 +1,28 @@
 <template>
   <el-table
-    :data="tableData"
+    :data= this.$store.state.log.log
     border
     style="width: 80%;margin:auto;">
     <el-table-column
       fixed
-      prop="index"
-      label="序号">
+      prop="bugId"
+      label="缺陷序号">
     </el-table-column>
     <el-table-column
-      prop="log"
-      label="错误信息">
+      prop="fixDate"
+      label="修复日期">
+    </el-table-column>
+    <el-table-column
+      prop="openDate"
+      label="打开日期">
+    </el-table-column>
+    <el-table-column
+      prop="reportIndex"
+      label="报告序号">
+    </el-table-column>
+    <el-table-column
+      prop="summary"
+      label="总结">
     </el-table-column>
     <el-table-column
       fixed="right"
@@ -24,33 +36,26 @@
 
 <script>
 import router from '../../router'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 export default {
   name: "errorLog",
   async mounted() {
-    await this.getErrorLogList();
+    await this.getErrorLogList(2);
+    console.log(this.$store.state.log.log[0].bugId);
   },
   methods: {
     handleClick(row) {
-      console.log(row.index);
-      router.push({ path: '/rank', query: { id: row.index }});
+      console.log(row.reportIndex);
+      router.push({ path: '/rank', query: { id: row.reportIndex }});
     },
+    ...mapActions([
+      'getErrorLogList',
+    ])
   },
 
   data() {
     return {
-      tableData: [{
-        index:0,
-        log:'hahahah'
-      }, {
-        index:1,
-        log:'hahahah'
-      },{
-        index:2,
-        log:'hahahah'
-      },{
-        index:3,
-        log:'hahahah'
-      }]
+      tableData: this.$store.state.log.log
     }
   }
 }

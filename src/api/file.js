@@ -10,3 +10,10 @@ export function getFileMessageAPI(fileIndex){
     method: 'GET'
   })
 }
+export function getSimilarityRankAPI(reportIndex){
+  console.log("api");
+  return axios({
+    url: `${api.filePre}/localizationOfBugReport/${reportIndex}`,
+    method: 'GET'
+  })
+}

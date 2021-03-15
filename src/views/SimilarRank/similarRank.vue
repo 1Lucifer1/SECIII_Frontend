@@ -1,20 +1,24 @@
 <template>
   <el-table
-    :data="tableData"
+    :data=this.$store.state.file.rank
     border
     style="width: 80%;margin:auto;">
     <el-table-column
       fixed
-      prop="index"
-      label="序号">
+      prop="cosineSimilarity"
+      label="相似度">
+    </el-table-column>
+    <el-table-column
+      prop="fileIndex"
+      label="文件序号">
     </el-table-column>
     <el-table-column
       prop="fileName"
       label="文件名">
     </el-table-column>
     <el-table-column
-      prop="filePath"
-      label="文件路径">
+      prop="fileRank"
+      label="文件排序">
     </el-table-column>
     <el-table-column
       fixed="right"
@@ -27,15 +31,23 @@
 </template>
 
 <script>
-import router from "../../router";
+import router from '../../router'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 
 export default {
   name: "similarRank",
+  async mounted() {
+    await this.getSimilarityRank(1);
+    console.log(this.$store.state.file.rank);
+  },
   methods: {
     handleClick(row) {
-      console.log(this.$route.query.id);
-      router.push({ path: '/msg', query: { id: row.index }});
+      //console.log(this.$route.query.id);
+      router.push({ path: '/msg', query: { id: row.fileIndex }});
     },
+    ...mapActions([
+      'getSimilarityRank',
+    ])
   },
 
   data() {

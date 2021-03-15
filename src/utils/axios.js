@@ -16,6 +16,7 @@ const VueAxios = {
     Object.defineProperties(Vue.prototype, {
       axios:  {
         get:function get () {
+          console.log("here");
           return instance
         }
       },

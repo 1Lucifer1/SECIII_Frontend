@@ -1,11 +1,12 @@
 import { axios } from '../utils/request'
 
 const api = {
-  adminPre: '/api/admin'
+  logPre: '/api/report'
 }
-export function getFileMessageAPI(){
+export function getErrorLogListAPI(fileIndex){
+  console.log("api");
   return axios({
-    url: `${api.adminPre}/getFileMessage`,
+    url: `${api.logPre}/getAllReportByProjectIndex/${fileIndex}`,
     method: 'GET'
   })
 }

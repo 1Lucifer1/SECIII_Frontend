@@ -40,7 +40,7 @@ name: "fileMessage",
     ])
   },
   async mounted() {
-    await this.getFileMessage(this.$route.query.id);
+    await this.getFileMessage(3);
   },
   data(){
     return {

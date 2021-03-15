@@ -31,28 +31,28 @@ const err = (error) =>{
 }
 
 //请求拦截器
-requests.interceptors.request.use(config => {
-  // const token = Vue.ls.get(ACCESS_TOKEN)
-  const token = localStorage.getItem('token')
-  if(token){
-    config.headers['token'] = token
-  }
-  return config;
-})
+// requests.interceptors.request.use(config => {
+//   // const token = Vue.ls.get(ACCESS_TOKEN)
+//   const token = localStorage.getItem('token')
+//   if(token){
+//     config.headers['token'] = token
+//   }
+//   return config;
+// })
 
 //接收拦截器
-requests.interceptors.response.use(response =>{
-  const res = response.data;
-  if(res.code !== 0 && res.code !== 200){
-    Notify({type: 'danger',message:res.message||res.msg});
-    if(res.code === 401||res.code === 403||res.code===999){
-      Notify({type:'danger',message:'请登录'});
-    }
-    return Promise.reject('error');
-  }else{
-    return res;
-  }
-},err)
+// requests.interceptors.response.use(response =>{
+//   const res = response.data;
+//   if(res.code !== 0 && res.code !== 200){
+//     Notify({type: 'danger',message:res.message||res.msg});
+//     if(res.code === 401||res.code === 403||res.code===999){
+//       Notify({type:'danger',message:'请登录'});
+//     }
+//     return Promise.reject('error');
+//   }else{
+//     return res;
+//   }
+// },err)
 
 const installer = {
   vm: {},
