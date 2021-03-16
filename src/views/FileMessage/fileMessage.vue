@@ -3,6 +3,7 @@
     <el-card class="box-card">
       <div slot="header" class="clearfix">
         <span>{{this.$store.state.file.file.fileName}}</span>
+        <span class="similar">{{this.$store.state.file.file.similarity}}</span>
         <br>
         <span class="path">{{this.$store.state.file.file.filePath}}</span>
       </div>
@@ -37,6 +38,11 @@ name: "fileMessage",
 </script>
 
 <style scoped>
+.similar{
+  font-size:50px;
+  float:right;
+  color:#7490b0;
+}
 .text {
   font-size: 14px;
 }

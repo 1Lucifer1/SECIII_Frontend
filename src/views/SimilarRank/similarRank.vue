@@ -44,7 +44,7 @@ export default {
   methods: {
     handleClick(row) {
       //console.log(this.$route.query.id);
-      router.push({ path: '/msg', query: { id: row.fileIndex }});
+      router.push({ path: '/msg', query: { id: row.fileIndex,similarity:row.cosineSimilarity }});
     },
     ...mapActions([
       'getSimilarityRank',
