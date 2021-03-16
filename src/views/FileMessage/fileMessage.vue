@@ -33,14 +33,14 @@ export default {
 name: "fileMessage",
   methods: {
     handleClick(row) {
-      console.log(row.index);
+      //console.log(row.index);
     },
     ...mapActions([
       'getFileMessage',
     ])
   },
   async mounted() {
-    await this.getFileMessage(3);
+    await this.getFileMessage(this.$route.query.id);
   },
   data(){
     return {
