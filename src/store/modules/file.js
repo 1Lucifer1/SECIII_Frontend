@@ -2,21 +2,21 @@ import {getFileMessageAPI,getSimilarityRankAPI} from '../../api/file'
 const file = {
   state: {
     file:{},
-    rank:[]
+    rank:[],
   },
   mutations: {
     set_similarityRank: function(state, data) {
       state.rank = data.data.data
     },
     set_fileMessage: function(state, data) {
-      state.file = data
+      state.file = data.data.data;
     },
 
   },
   actions: {
     getFileMessage : async({ commit },id) => {
-      console.log(id);
       const res = await getFileMessageAPI(id)
+      console.log(res.data.data);
       if(res){
         commit('set_fileMessage', res)
       }

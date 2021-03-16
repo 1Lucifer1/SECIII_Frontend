@@ -14,7 +14,7 @@ export default {
 <style scoped>
 .title{
   margin-bottom: 10%;
-  position:fixed;
+  position:absolute;
 }
 .left {
   display:flex;
