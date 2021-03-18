@@ -5,9 +5,12 @@
     cancelText="取消"
     @cancel="cancel"
   >
-    <div>Top1 : {{this.$store.state.file.evalution.top1}}</div>
-    <div>Top5 : {{this.$store.state.file.evalution.top5}}</div>
-    <div>Top10:{{this.$store.state.file.evalution.top10}}</div>
+    <template slot="footer">
+      <a-button @click="cancel">取消</a-button>
+    </template>
+    <div>Top@1 : {{this.$store.state.file.evalution.top1}}</div>
+    <div>Top@5 : {{this.$store.state.file.evalution.top5}}</div>
+    <div>Top@10:{{this.$store.state.file.evalution.top10}}</div>
     <div>Map  : {{this.$store.state.file.evalution.map}}</div>
     <div>Mrr  : {{this.$store.state.file.evalution.mrr}}</div>
   </a-modal>
