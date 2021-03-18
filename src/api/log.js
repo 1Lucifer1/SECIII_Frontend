@@ -6,7 +6,7 @@ const api = {
 export function getErrorLogListAPI(fileIndex){
   console.log("api");
   return axios({
-    url: `${api.logPre}/getAllReportByProjectIndex/${fileIndex}`,
+    url: `${api.logPre}/getAllReportsByProjectIndex/${fileIndex}`,
     method: 'GET'
   })
 }

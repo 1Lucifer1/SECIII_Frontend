@@ -1,33 +1,35 @@
 <template>
-  <el-table
-    :data=this.$store.state.file.rank
-    border
-    style="width: 80%;margin:auto;">
-    <el-table-column
-      fixed
-      prop="cosineSimilarity"
-      label="相似度">
-    </el-table-column>
-    <el-table-column
-      prop="fileIndex"
-      label="文件序号">
-    </el-table-column>
-    <el-table-column
-      prop="fileName"
-      label="文件名">
-    </el-table-column>
-    <el-table-column
-      prop="fileRank"
-      label="文件排序">
-    </el-table-column>
-    <el-table-column
-      fixed="right"
-      label="操作">
-      <template slot-scope="scope">
-        <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-      </template>
-    </el-table-column>
-  </el-table>
+  <div>
+    <el-table
+      :data=this.$store.state.file.rank
+      border
+      style="width: 80%;margin:auto;z-index:0">
+      <el-table-column
+        fixed
+        prop="fileRank"
+        label="文件排序">
+      </el-table-column>
+      <el-table-column
+        prop="cosineSimilarity"
+        label="相似度">
+      </el-table-column>
+      <el-table-column
+        prop="fileIndex"
+        label="文件序号">
+      </el-table-column>
+      <el-table-column
+        prop="fileName"
+        label="文件名">
+      </el-table-column>
+      <el-table-column
+        fixed="right"
+        label="操作">
+        <template slot-scope="scope">
+          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+  </div>
 </template>
 
 <script>
@@ -40,14 +42,24 @@ export default {
     console.log(this.$route.query.id);
     await this.getSimilarityRank(this.$route.query.id);
     console.log(this.$store.state.file.rank);
+    await this.set_id(this.$route.query.id);
   },
   methods: {
     handleClick(row) {
       //console.log(this.$route.query.id);
       router.push({ path: '/msg', query: { id: row.fileIndex,similarity:row.cosineSimilarity }});
     },
+    showEvalution(id){
+      this.set_isShowEvalution(true);
+      console.log(this.$store.state.file.isShowEvalution);
+      console.log(this.$store.state.file.id);
+    },
     ...mapActions([
       'getSimilarityRank',
+    ]),
+    ...mapMutations([
+      'set_isShowEvalution',
+      'set_id',
     ])
   },
 
@@ -76,5 +88,11 @@ export default {
 </script>
 
 <style scoped>
+  .btn{
+    position:fixed;
+    bottom:30px;
+    right:18px;
+    z-index: 2;
+  }
 
 </style>

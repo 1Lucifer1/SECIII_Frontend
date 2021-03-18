@@ -12,6 +12,7 @@ const store = new Vuex.Store({
     log
   },
   state: {
+
   },
   mutations: {
   },
