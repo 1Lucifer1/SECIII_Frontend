@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    <div class="left">缺陷报告查询系统</div>
+    <div class="left">IRBL</div>
     <slot name="title-right" class="right"></slot>
   </div>
 </template>
