@@ -13,6 +13,7 @@ export default {
 
 <style scoped>
 .title{
+  z-index:-1;
   margin-bottom: 10%;
   position:absolute;
 }
