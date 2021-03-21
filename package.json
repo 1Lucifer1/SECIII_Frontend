@@ -10,7 +10,9 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "build": "node build/build.js",
-    "serve": "vue-cli-service serve"
+    "serve": "vue-cli-service serve",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "ant-design-vue": "^1.7.4",
@@ -63,7 +65,8 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "cypress": "^4.9.0"
   },
   "engines": {
     "node": ">= 6.0.0",

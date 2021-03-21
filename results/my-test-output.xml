@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="11.347000000000001" tests="4" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-03-20T14:55:13" tests="0" file="cypress\integration\examples\e2e.spec.js" failures="0" time="0">
+  </testsuite>
+  <testsuite name="e2e Test" timestamp="2021-03-20T14:55:13" tests="4" failures="0" time="11.347000000000001">
+    <testcase name="e2e Test index page" time="4.699" classname="index page">
+    </testcase>
+    <testcase name="e2e Test button page" time="1.044" classname="button page">
+    </testcase>
+    <testcase name="e2e Test rank page" time="3.054" classname="rank page">
+    </testcase>
+    <testcase name="e2e Test code page" time="2.55" classname="code page">
+    </testcase>
+  </testsuite>
+</testsuites>
