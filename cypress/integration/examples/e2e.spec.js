@@ -44,7 +44,7 @@ describe('e2e Test', function() {
     cy.contains('文件名')
     cy.contains('操作')
     cy.contains('查看')
-    cy.contains('0.7572637241589192')
+    // cy.contains('0.7572637241589192')
     cy.contains('1')
     cy.contains('2')
     cy.contains('Program.java')
