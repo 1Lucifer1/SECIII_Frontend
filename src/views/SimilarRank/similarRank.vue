@@ -84,7 +84,7 @@ export default {
         fileName:'a.js',
         filePath:'/a/a.js'
       }],
-      loading:true;
+      loading:true
     }
   }
 }
