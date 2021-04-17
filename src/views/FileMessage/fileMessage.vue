@@ -3,7 +3,7 @@
     <el-card class="box-card">
       <div slot="header" class="clearfix">
         <span>{{this.$store.state.file.file.fileName}}</span>
-<!--        <span class="similar">{{this.$store.state.file.file.similarity}}%</span>-->
+        <span class="similar">{{similarity}}%</span>
         <br>
         <span class="path">{{this.$store.state.file.file.filePath}}</span>
       </div>
@@ -27,11 +27,15 @@ name: "fileMessage",
       'getFileMessage',
     ])
   },
+  created() {
+    this.similarity =  Math.ceil(this.$route.query.similarity*10000)/100;
+  },
   async mounted() {
     await this.getFileMessage(this.$route.query.id);
   },
   data(){
     return {
+      similarity: 0
     }
   }
 }
