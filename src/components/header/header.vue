@@ -1,7 +1,6 @@
 <template>
   <div class="title">
-    <div class="left">IRBL</div>
-    <slot name="title-right" class="right"></slot>
+    IRBL
   </div>
 </template>
 
@@ -13,9 +12,14 @@ export default {
 
 <style scoped>
 .title{
-  z-index:-1;
-  margin-bottom: 10%;
-  position:absolute;
+  display:flex;
+  font-size: 33px;
+  color: #486779;
+  font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  position: absolute;
+  top: 10px;
+  left:50px;
 }
 .left {
   display:flex;

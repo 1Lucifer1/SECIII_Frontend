@@ -8,11 +8,11 @@
     <template slot="footer">
       <a-button @click="cancel">取消</a-button>
     </template>
-    <div>Top@1 : {{this.$store.state.file.evalution.top1}}</div>
-    <div>Top@5 : {{this.$store.state.file.evalution.top5}}</div>
-    <div>Top@10 : {{this.$store.state.file.evalution.top10}}</div>
-    <div>MAP : {{this.$store.state.file.evalution.map}}</div>
-    <div>MRR : {{this.$store.state.file.evalution.mrr}}</div>
+    <div>Top@1 : {{this.$store.state.file.top1}}%</div>
+    <div>Top@5 : {{this.$store.state.file.top5}}%</div>
+    <div>Top@10 : {{this.$store.state.file.top10}}%</div>
+    <div>MRR : {{this.$store.state.file.mrr}}%</div>
+    <div>MAP : {{this.$store.state.file.map}}%</div>
   </a-modal>
     </template>
     <script>

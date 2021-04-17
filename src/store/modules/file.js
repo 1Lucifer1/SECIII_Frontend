@@ -5,7 +5,12 @@ const file = {
     rank:[],
     isShowEvalution:false,
     id:0,
-    evalution:''
+    evalution:'',
+    top1:0,
+    top5:0,
+    top10:0,
+    mrr:0,
+    map:0
   },
   mutations: {
     set_similarityRank: function(state, data) {
@@ -18,7 +23,14 @@ const file = {
       state.isShowEvalution = data;
     },
     set_evalution: function(state, data){
+      //console.log(data);
       state.evalution = data;
+      state.top1 = Math.ceil(data.top1*100);
+      state.top5 = Math.ceil(data.top5*100);
+      state.top10 = Math.ceil(data.top10*100);
+      state.mrr = Math.ceil(data.mrr*100);
+      state.map = Math.ceil(data.map*100);
+      console.log(state.map);
     },
     set_id: function(state, data){
       state.id = data;
