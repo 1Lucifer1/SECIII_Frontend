@@ -25,11 +25,11 @@ const file = {
     set_evalution: function(state, data){
       //console.log(data);
       state.evalution = data;
-      state.top1 = Math.ceil(data.top1*100);
-      state.top5 = Math.ceil(data.top5*100);
-      state.top10 = Math.ceil(data.top10*100);
-      state.mrr = Math.ceil(data.mrr*100);
-      state.map = Math.ceil(data.map*100);
+      state.top1 = Math.ceil(data.top1*10000)/100;
+      state.top5 = Math.ceil(data.top5*10000)/100;
+      state.top10 = Math.ceil(data.top10*10000)/100;
+      state.mrr = Math.ceil(data.mrr*10000)/100;
+      state.map = Math.ceil(data.map*10000)/100;
       console.log(state.map);
     },
     set_id: function(state, data){
