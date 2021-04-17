@@ -1,6 +1,7 @@
 <template>
   <div>
     <el-table
+      v-loading="loading"
       :data=this.$store.state.file.rank
       border
       style="width: 80%;margin:auto;z-index:0">
@@ -41,6 +42,7 @@ export default {
   async mounted() {
     console.log(this.$route.query.id);
     await this.getSimilarityRank(this.$route.query.id);
+    this.loading = false;
     console.log(this.$store.state.file.rank);
     await this.set_id(this.$route.query.id);
   },
@@ -81,7 +83,8 @@ export default {
         index:3,
         fileName:'a.js',
         filePath:'/a/a.js'
-      }]
+      }],
+      loading:true;
     }
   }
 }
