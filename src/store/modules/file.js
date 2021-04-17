@@ -30,33 +30,33 @@ const file = {
       state.top10 = Math.ceil(data.top10*10000)/100;
       state.mrr = Math.ceil(data.mrr*10000)/100;
       state.map = Math.ceil(data.map*10000)/100;
-      console.log(state.map);
+      //console.log(state.map);
     },
     set_id: function(state, data){
       state.id = data;
-      console.log(state.id);
+      //console.log(state.id);
     }
 
   },
   actions: {
     getFileMessage : async({ commit },id) => {
       const res = await getFileMessageAPI(id)
-      console.log(res.data.data);
+      //console.log(res.data.data);
       if(res){
         commit('set_fileMessage', res)
       }
     },
     getEvalution : async({ commit },id) => {
-      console.log(id);
+      //console.log(id);
       const res = await getEvalutionAPI(id)
-      console.log(res.data.data);
+      //console.log(res.data.data);
       if(res){
         commit('set_evalution', res.data.data)
       }
     },
     getSimilarityRank : async({ commit },id) => {
-      console.log(id);
       const res = await getSimilarityRankAPI(id)
+      console.log(res);
       if(res){
         commit('set_similarityRank', res)
       }
