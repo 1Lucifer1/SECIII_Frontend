@@ -1,6 +1,7 @@
 <template>
   <div>
     <el-table
+      v-loading="loading"
       :data= this.$store.state.log.log
       border
       style="width: 80%;margin:auto;z-index:0;">
@@ -51,6 +52,7 @@ export default {
   },
   async mounted() {
     await this.getErrorLogList(2);
+    this.loading = false;
     console.log(this.$store.state.log.log[0].bugId);
   },
   methods: {
@@ -72,7 +74,8 @@ export default {
 
   data() {
     return {
-      tableData: this.$store.state.log.log
+      tableData: this.$store.state.log.log,
+      loading:true
     }
   }
 }
