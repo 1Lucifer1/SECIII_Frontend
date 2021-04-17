@@ -1,12 +1,19 @@
 <template>
-  <div class="title">
+  <div class="title" @click="handleClick()">
     IRBL
   </div>
 </template>
 
 <script>
+import router from "../../router";
+
 export default {
-  name: "header"
+  name: "header",
+  methods: {
+    handleClick(){
+      router.push('/');
+    }
+  }
 }
 </script>
 

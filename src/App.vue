@@ -7,12 +7,15 @@
 
 <script>
 import Header from './components/header/Header.vue'
+import router from "./router";
 export default {
   name: 'App',
   components: {
     Header
   },
+
 }
+
 </script>
 
 <style>
