@@ -11,8 +11,8 @@
     <div>Top@1 : {{this.$store.state.file.top1}}%</div>
     <div>Top@5 : {{this.$store.state.file.top5}}%</div>
     <div>Top@10 : {{this.$store.state.file.top10}}%</div>
-    <div>MRR : {{this.$store.state.file.mrr}}%</div>
-    <div>MAP : {{this.$store.state.file.map}}%</div>
+    <div>MRR : {{this.$store.state.file.mrr}}</div>
+    <div>MAP : {{this.$store.state.file.map}}</div>
   </a-modal>
     </template>
     <script>
