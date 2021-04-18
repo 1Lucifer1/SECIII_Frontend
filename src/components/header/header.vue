@@ -24,7 +24,7 @@ export default {
   color: #486779;
   font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: 600;
-  position: absolute;
+  position: fixed;
   top: 10px;
   left:50px;
 }
