@@ -1,43 +1,36 @@
 <template>
   <div>
-    <el-table
-      v-loading="loading"
-      :data= this.$store.state.log.log
-      border
-      style="width: 80%;margin:auto;z-index:0;">
-      <el-table-column
-        fixed
-        prop="bugId"
-        label="缺陷序号">
-      </el-table-column>
-      <!--    <el-table-column-->
-      <!--      prop="fixDate"-->
-      <!--      label="修复日期">-->
-      <!--    </el-table-column>-->
-      <!--    <el-table-column-->
-      <!--      prop="openDate"-->
-      <!--      label="打开日期">-->
-      <!--    </el-table-column>-->
-      <!--    <el-table-column-->
-      <!--      prop="reportIndex"-->
-      <!--      label="报告序号">-->
-      <!--    </el-table-column>-->
-      <el-table-column
-        prop="summary"
-        label="简述">
-      </el-table-column>
-      <el-table-column
-        fixed="right"
-        label="操作">
-        <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-        </template>
-      </el-table-column>
-    </el-table>
-    <el-button type="primary" round icon="el-icon-search" class="btn" @click="showEvalution()">
-      评估
-    </el-button>
-    <Evalution></Evalution>
+    <div class="wrap">
+      <el-table
+        v-loading="loading"
+        :data= this.$store.state.log.log
+        border
+        style="width: 80%;
+        margin:auto;
+        -webkit-overflow-scrolling: touch;
+        overflow-Y: scroll;">
+        <el-table-column
+          fixed
+          prop="bugId"
+          label="缺陷序号">
+        </el-table-column>
+        <el-table-column
+          prop="summary"
+          label="简述">
+        </el-table-column>
+        <el-table-column
+          fixed="right"
+          label="操作">
+          <template slot-scope="scope">
+            <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+          </template>
+        </el-table-column>
+      </el-table>
+      <el-button type="primary" round icon="el-icon-search" class="btn" @click="showEvalution()">
+        评估
+      </el-button>
+      <Evalution></Evalution>
+    </div>
   </div>
 </template>
 
@@ -82,6 +75,14 @@ export default {
 </script>
 
 <style scoped>
+.wrap{
+  /*background-color: red;*/
+  /*overflow:hidden;*/
+  /*position:fixed;*/
+  /*width:100%;*/
+  /*top:50px;*/
+  /*left:0;*/
+}
 .btn{
   position:fixed;
   bottom:30px;
