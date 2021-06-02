@@ -5,6 +5,7 @@ import Login from '../views/login'
 import ErrorLog from '../views/ErrorLog/errorLog'
 import SimilarRank from '../views/SimilarRank/similarRank'
 import FileMessage from '../views/FileMessage/fileMessage'
+import Project from '../views/Project/project'
 
 Vue.use(Router)
 
@@ -14,14 +15,19 @@ export default new Router({
       path: '/',
       // name: 'Login',
       // component: Login
-      name: 'ErrorLog',
-      component: ErrorLog
+      name: 'Project',
+      component: Project
     },
     // {
     //   path: '/error',
     //   name: 'ErrorLog',
     //   component: ErrorLog
     // }
+    {
+      path: '/error',
+      name: 'ErrorLog',
+      component: ErrorLog
+    },
     {
         path: '/rank',
         name: 'SimilarRank',

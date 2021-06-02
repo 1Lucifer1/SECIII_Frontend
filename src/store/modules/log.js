@@ -15,6 +15,7 @@ const log = {
   },
   actions: {
     getErrorLogList : async({ commit },id) => {
+      console.log(id);
       const res = await getErrorLogListAPI(id)
       console.log(res);
       if(res){

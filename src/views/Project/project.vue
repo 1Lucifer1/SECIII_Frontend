@@ -3,7 +3,7 @@
     <div class="wrap">
       <el-table
         v-loading="loading"
-        :data= this.$store.state.log.log
+        :data= this.$store.state.project.project
         border
         style="width: 80%;
         margin:auto;
@@ -11,12 +11,20 @@
         overflow-Y: scroll;">
         <el-table-column
           fixed
-          prop="bugId"
-          label="缺陷序号">
+          prop="projectIndex"
+          label="项目序号">
         </el-table-column>
         <el-table-column
-          prop="summary"
-          label="简述">
+          prop="projectName"
+          label="项目名字">
+        </el-table-column>
+        <el-table-column
+          prop="codeFileCount"
+          label="源文件数">
+        </el-table-column>
+        <el-table-column
+          prop="reportCount"
+          label="报告数">
         </el-table-column>
         <el-table-column
           fixed="right"
@@ -26,10 +34,6 @@
           </template>
         </el-table-column>
       </el-table>
-      <el-button type="primary" round icon="el-icon-search" class="btn" @click="showEvalution()">
-        评估
-      </el-button>
-      <Evalution></Evalution>
     </div>
   </div>
 </template>
@@ -37,32 +41,22 @@
 <script>
 import router from '../../router'
 import { mapGetters, mapMutations, mapActions } from 'vuex'
-import Evalution from './component/evalution'
 export default {
-  name: "errorLog",
-  components:{
-    Evalution
-  },
+  name: "project",
   async created() {
-    //console.log(this.$route.query.id);
-    await this.getErrorLogList(this.$route.query.id);
+    await this.getProjectList();
     this.loading = false;
-    //console.log(this.$store.state.log.log[0].bugId);
   },
   methods: {
     handleClick(row) {
-      console.log(row.reportIndex);
-      router.push({ path: '/rank', query: { id: row.reportIndex }});
-    },
-    showEvalution(){
-      this.set_isShowEvalution(true);
-      console.log(this.$store.state.file.isShowEvalution);
+      //console.log(row.projectIndex);
+      router.push({ path: '/error', query: { id: row.projectIndex }});
     },
     ...mapActions([
-      'getErrorLogList',
+      'getProjectList',
     ]),
     ...mapMutations([
-      'set_isShowEvalution',
+
     ])
   },
 
@@ -76,13 +70,5 @@ export default {
 </script>
 
 <style scoped>
-.wrap{
 
-}
-.btn{
-  position:fixed;
-  bottom:30px;
-  right:18px;
-  z-index: 2;
-}
 </style>
