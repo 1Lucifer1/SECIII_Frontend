@@ -19,7 +19,7 @@ export function getSimilarityRankAPI(reportIndex){
   })
 }
 export function getEvalutionAPI(projectIndex){
-  console.log("api");
+  console.log(projectIndex);
   return axios({
     url: `${api.projectPre}/getIndicatorEvaluation/${projectIndex}`,
     method: 'GET'

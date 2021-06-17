@@ -1,5 +1,6 @@
 <template>
   <a-modal
+    v-loading.fullscreen.lock="loading"
     :visible="this.$store.state.file.isShowEvalution"
     title="显示评估指标"
     cancelText="取消"
@@ -14,7 +15,7 @@
     <div>MRR : {{this.$store.state.file.mrr}}</div>
     <div>MAP : {{this.$store.state.file.map}}</div>
   </a-modal>
-    </template>
+</template>
     <script>
     import { mapGetters, mapMutations, mapActions } from 'vuex'
 
@@ -22,11 +23,13 @@
       name: 'evalution',
       data() {
         return {
-
+          loading:true
         }
       },
       async mounted() {
-        await this.getEvalution(2);
+        console.log(this.$route.query.id);
+        await this.getEvalution(this.$route.query.id);
+        this.loading = false;
       },
       methods: {
         ...mapMutations([

@@ -46,6 +46,7 @@ export default {
   async created() {
     //console.log(this.$route.query.id);
     await this.getErrorLogList(this.$route.query.id);
+
     this.loading = false;
     //console.log(this.$store.state.log.log[0].bugId);
   },
@@ -60,6 +61,7 @@ export default {
     },
     ...mapActions([
       'getErrorLogList',
+      'getEvalution'
     ]),
     ...mapMutations([
       'set_isShowEvalution',

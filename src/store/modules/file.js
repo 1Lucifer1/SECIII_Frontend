@@ -55,8 +55,8 @@ const file = {
       }
     },
     getSimilarityRank : async({ commit },id) => {
-      console.log(id);
-      const res = await getSimilarityRankAPI(id)
+      const res = await getSimilarityRankAPI(id);
+      console.log(res);
       if(res){
         commit('set_similarityRank', res)
       }
