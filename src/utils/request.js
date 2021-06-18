@@ -6,7 +6,7 @@ import store from '../store'
 
 const requests = axios.create({
   baseURL:'http://localhost:40000',
-  timeout:60000
+  timeout:600000
 })
 
 const err = (error) =>{

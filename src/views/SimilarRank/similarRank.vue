@@ -12,7 +12,7 @@
       </el-table-column>
       <el-table-column
         prop="cosineSimilarity"
-        label="相似度">
+        label="得分">
       </el-table-column>
       <el-table-column
         prop="fileIndex"
