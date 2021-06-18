@@ -52,7 +52,7 @@ describe('e2e Test', function() {
     cy.get('.el-table__fixed-right > .el-table__fixed-body-wrapper > .el-table__body > tbody > :nth-child(1) > .el-table_1_column_3 > .cell > .el-button > span').click()
     cy.get('.el-table')
     cy.contains('文件排序')
-    cy.contains('相似度')
+    cy.contains('得分')
     cy.contains('文件序号')
     cy.contains('包名')
     cy.contains('操作')
@@ -71,7 +71,6 @@ describe('e2e Test', function() {
     cy.get('.content')
     cy.get('.el-card__header')
     cy.get('.el-card__body')
-    cy.get('.similar')
     cy.get('.path')
     cy.contains(' Copyright (c) 2000, 2005 IBM Corporation and others.')
     cy.scrollTo(0, 500);
