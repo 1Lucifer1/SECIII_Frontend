@@ -17,14 +17,8 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 
-# run unit tests
-npm run unit
-
 # run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+cypress run
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+前端e2e测试使用的是cypress进行脚本测试，运行方法如上面所示，若要看事实的脚本测试则使用cypress open指令。
