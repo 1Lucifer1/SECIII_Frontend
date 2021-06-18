@@ -19,8 +19,8 @@
         label="文件序号">
       </el-table-column>
       <el-table-column
-        prop="fileName"
-        label="文件名">
+        prop="packageName"
+        label="包名">
       </el-table-column>
       <el-table-column
         fixed="right"
